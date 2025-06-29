@@ -74,7 +74,7 @@ header {
     display: block;
     width: 70px;
     height: 70px;
-    background-image: url('/Sobre/img/Foto\ de\ Perfil\ IA.jpg');
+    background-image: url('Sobre/img/Foto\ de\ Perfil\ IA.jpg');
     background-size: cover; 
     background-position: center;
     background-repeat: no-repeat;
