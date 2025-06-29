@@ -10,7 +10,7 @@
 }
 
 body {
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .background {
@@ -50,11 +50,10 @@ header {
 }
 
 .logo {
-    height: 40px;
-    width: 40px;
+    height: 70px;
+    width: 70px;
     background: transparent;
-    border: 1px solid #2ecc71;
-    color: #2ecc71;
+    border: 1px solid ;
     border-radius: 50%;
     display: inline-flex;
     justify-content: center;
@@ -71,9 +70,15 @@ header {
 }
 
 .logo i::before {
-    content: 'LP';
+    content: '';
     display: block;
-    overflow: hidden;
+    width: 70px;
+    height: 70px;
+    background-image: url('/Sobre/img/Foto\ de\ Perfil\ IA.jpg');
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%; 
 }
 
 button {

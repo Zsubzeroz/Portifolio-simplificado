@@ -18,7 +18,7 @@
             <ul>
                 <li><strong>Nome:</strong> Luan Estifer Rodrigues Pereira</li>
                 <li><strong>Data de Nascimento:</strong> 02/03/2005</li>
-                <li><strong>Idade:</strong> 19 anos</li>
+                <li><strong>Idade:</strong> <span id="idade">...</span> anos</li>
                 <li><strong>Estado Civil:</strong> Solteiro</li>
                 <li><strong>Nacionalidade:</strong> Brasileiro</li>
                 <li><strong>Endereço:</strong> Bairro Park Orlando Correia, Rua Papa João Paulo II, 256, Artur Nogueira, São Paulo</li>
@@ -118,5 +118,31 @@
         }
     </script>
     <script src="script.js"></script>
+     <script>
+        // <<< MUITO IMPORTANTE: Altere esta data para a sua! >>>
+        // Formato: Ano-Mês-Dia (AAAA-MM-DD)
+        const minhaDataDeNascimento = '2005-03-02'; 
+
+        // --- A mágica acontece aqui ---
+
+        // 1. Pega a data de hoje
+        const hoje = new Date();
+        
+        // 2. Transforma a sua data de nascimento (texto) em um objeto de data
+        const dataNascimento = new Date(minhaDataDeNascimento);
+
+        // 3. Calcula a diferença de anos
+        let idade = hoje.getFullYear() - dataNascimento.getFullYear();
+
+        // 4. Verifica se o aniversário deste ano já passou
+        const diferencaMeses = hoje.getMonth() - dataNascimento.getMonth();
+        if (diferencaMeses < 0 || (diferencaMeses === 0 && hoje.getDate() < dataNascimento.getDate())) {
+            idade--; // Se não passou, subtrai 1 da idade
+        }
+
+        // 5. Encontra o elemento com id="idade" no HTML e coloca o resultado lá
+        document.getElementById('idade').textContent = idade;
+
+    </script>
 </body>
 </html>
