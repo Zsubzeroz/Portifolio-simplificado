@@ -85,7 +85,7 @@ header {
     Assumindo que o CSS está em /assets/css/ e a imagem em /assets/images/
     O `../` volta uma pasta para chegar na pasta `assets`.
     */
-    background-image: url('assets/images/Foto\ de\ Perfil\ IA.jpg');
+    background-image: url('../images/foto-perfil-ia.jpg');
 
     background-size: cover;
     background-position: center;
