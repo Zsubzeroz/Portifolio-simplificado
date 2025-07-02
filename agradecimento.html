@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Agradecimento</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="btnvoltar">
+        <a class="btn" href="javascript:voltar()">Voltar</a>    
+    </div>
+    <div class="container">
+        <h1>Obrigado!</h1>
+        <p>Agradecemos por sua visita.</p>
+        <button id="mostrarMensagem">Mostrar Mensagem Especial</button>
+        <div id="mensagemEspecial" style="display: none;">
+            <p>Retornarei em breve!</p>
+        </div>
+    </div>
+    <script src="assets/js/script.js"></script> 
+    <script>
+        function voltar() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>
