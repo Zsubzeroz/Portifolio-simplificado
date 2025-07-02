@@ -71,7 +71,12 @@ header {
     border: 1px solid #2ecc71;
     border-radius: 50%;
     cursor: pointer;
+    background-image: url('../images/foto-perfil-ia.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     overflow: hidden; /* Garante que a imagem não saia do círculo */
+    transition: transform 0.3s ease; /* Efeito de hover */
 }
 
 .logo i::before {
@@ -79,17 +84,14 @@ header {
     display: block;
     width: 100%;
     height: 100%;
-    
-    /* 
-    IMPORTANTE: Caminho corrigido. 
-    Assumindo que o CSS está em /assets/css/ e a imagem em /assets/images/
-    O `../` volta uma pasta para chegar na pasta `assets`.
-    */
     background-image: url('../images/foto-perfil-ia.jpg');
-
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+.logo:hover {
+    transform: scale(1.1); /* Aumenta o logo ao passar o mouse */
 }
 
 /* Botão Padrão */
