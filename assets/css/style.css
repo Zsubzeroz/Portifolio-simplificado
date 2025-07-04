@@ -65,26 +65,6 @@ header {
     font-weight: 300;
 }
 
-.logo {
-    height: 75px;
-    width: 75px;
-    border: 1px solid #2ecc71;
-    border-radius: 50%;
-    cursor: pointer;
-    overflow: hidden; /* Garante que a imagem não saia do círculo */
-}
-
-.logo i::before {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-image: url('https://github.com/Zsubzeroz/Portifolio-simplificado/blob/main/assets/images/perfil.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
 /* Botão Padrão */
 .btn {
     display: inline-block;
