@@ -48,7 +48,7 @@ Desktop View
 
 Mobile View
 
-![alt text](./assets/images/mobile-view.png)
+![alt text](./assets/images/mobile-view.jpg)
 
 
 🎥 Demonstração
