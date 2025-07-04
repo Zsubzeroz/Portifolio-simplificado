@@ -81,17 +81,22 @@ cd seu-repositorio
 # Você pode simplesmente arrastar o arquivo para a janela do navegador ou usar uma extensão como o "Live Server" no VSCode.
 
 👨‍💻 Luan Estifer Rodrigues Pereira
-<a href="https://www.linkedin.com/in/luan-estifer-rodrigues-pereira-7577a2285/">
 <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/104192667?v=4" width="100px;" alt="Foto do Luan Estifer"/>
+<br>
+<a href="https://www.linkedin.com/in/luan-estifer-rodrigues-pereira-7577a2285/">
 <br />
-<sub><b>Luan Estifer Rodrigues Pereira</b></sub>
+<sub><b>![alt text](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)</b></sub>
 </a>
 <br />
+<a href="https://github.com/Zsubzeroz">
+<br />
+<sub><b>![alt text](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)</b></sub>
+</a>
 
 
-![alt text](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)
 
 
-![alt text](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
+
+
 
 <!-- Adicione seu link do GitHub -->
