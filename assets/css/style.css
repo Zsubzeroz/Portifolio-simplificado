@@ -66,8 +66,8 @@ header {
 }
 
 .logo {
-    height: 70px;
-    width: 70px;
+    height: 75px;
+    width: 75px;
     border: 1px solid #2ecc71;
     border-radius: 50%;
     cursor: pointer;
@@ -79,14 +79,7 @@ header {
     display: block;
     width: 100%;
     height: 100%;
-    
-    /* 
-    IMPORTANTE: Caminho corrigido. 
-    Assumindo que o CSS está em /assets/css/ e a imagem em /assets/images/
-    O `../` volta uma pasta para chegar na pasta `assets`.
-    */
-    background-image: url('/assets/images/Foto\ de\ Perfil\ IA.jpg');
-
+    background-image: url('/assets/images/perfil.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
