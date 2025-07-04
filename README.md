@@ -1,6 +1,6 @@
-# Projeto: Calculadora Simples
+# Projeto: Portfólio
 ![LabelCalculadora](/assets/cadastrodeproduto.png)
-Uma simples calculadora para ajuda-lo a realizar contas do seu dia a dia.
+Uma simples Portifolio
 
 ## índice
 - <a href="#funcionalidades-do-projeto">Funcionalidades do Projeto</a>
@@ -9,14 +9,13 @@ Uma simples calculadora para ajuda-lo a realizar contas do seu dia a dia.
 - <a href="#tecnologias-utilizadas">Tecnologias Utilizadas<a>
 
 ## Funcionalidades do Projeto
-- [x] Calculos simples
-
+- [x] 
 ## Layout
 - CSS
 <!--"Imagens"-->
 
 ## Demonstração
-![Link demonstraçãoo](/assets/cadastrodeproduto.gif)
+![Link demonstraçãoo]()
 
 ## Tecnologias utilizadas
 - Java Script
