@@ -55,7 +55,7 @@ Mobile View
 
 Abaixo, uma pequena demonstração animada do portfólio em ação.
 
-![alt text](./assets/portfolio-demo.gif)
+![alt text](./assets/images/portfolio-demo.gif)
 
 
 💻 Tecnologias Utilizadas
