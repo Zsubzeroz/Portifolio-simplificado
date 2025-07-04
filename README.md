@@ -2,8 +2,6 @@ Projeto: Portfólio Pessoal
 
 ![alt text](assets/portfolio-screenshot.png)
 
-<!-- Observação: Renomeie a imagem principal do seu projeto para 'portfolio-screenshot.png' e coloque na pasta 'assets', ou ajuste o caminho aqui. A imagem 'cadastrodeproduto.png' não parece representar um portfólio. -->
-
 
 Um portfólio pessoal desenvolvido para apresentar meus projetos, habilidades e informações de contato de forma profissional e organizada.
 
@@ -21,7 +19,7 @@ Tecnologias Utilizadas
 
 Como Rodar o Projeto
 
-Autor
+Luan Estier Rodrigues Pereira
 
 🎯 Sobre o Projeto
 
@@ -47,14 +45,11 @@ Desktop View
 
 ![alt text](assets/desktop-view.png)
 
-<!-- Adicione aqui um screenshot da versão para desktop -->
-
 
 Mobile View
 
 ![alt text](assets/mobile-view.png)
 
-<!-- Adicione aqui um screenshot da versão para mobile -->
 
 🎥 Demonstração
 
@@ -62,7 +57,6 @@ Abaixo, uma pequena demonstração animada do portfólio em ação.
 
 ![alt text](assets/portfolio-demo.gif)
 
-<!-- Grave um GIF mostrando a navegação pelo site e salve como 'portfolio-demo.gif' na pasta 'assets' -->
 
 💻 Tecnologias Utilizadas
 
@@ -86,7 +80,7 @@ cd seu-repositorio
 # 3. Abra o arquivo index.html no seu navegador
 # Você pode simplesmente arrastar o arquivo para a janela do navegador ou usar uma extensão como o "Live Server" no VSCode.
 
-👨‍💻 Autor
+👨‍💻 Luan Estifer Rodrigues Pereira
 <a href="https://www.linkedin.com/in/luan-estifer-rodrigues-pereira-7577a2285/">
 <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/104192667?v=4" width="100px;" alt="Foto do Luan Estifer"/>
 <br />
