@@ -1,6 +1,6 @@
 Projeto: Portfólio Pessoal
 
-![alt text](assets/portfolio-screenshot.png)
+![alt text](./assets/portfolio-screenshot.png)
 
 
 Um portfólio pessoal desenvolvido para apresentar meus projetos, habilidades e informações de contato de forma profissional e organizada.
@@ -43,19 +43,19 @@ O design do projeto foi criado com foco em uma interface limpa, moderna e intuit
 
 Desktop View
 
-![alt text](assets/desktop-view.png)
+![alt text](./assets/desktop-view.png)
 
 
 Mobile View
 
-![alt text](assets/mobile-view.png)
+![alt text](./assets/mobile-view.png)
 
 
 🎥 Demonstração
 
 Abaixo, uma pequena demonstração animada do portfólio em ação.
 
-![alt text](assets/portfolio-demo.gif)
+![alt text](./assets/portfolio-demo.gif)
 
 
 💻 Tecnologias Utilizadas
