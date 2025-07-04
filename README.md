@@ -101,6 +101,3 @@ cd seu-repositorio
 ![alt text](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
 
 <!-- Adicione seu link do GitHub -->
-
-
-Dica: Copie e cole este código no seu arquivo README.md e personalize as informações entre <!-- ... --> e os links/imagens de exemplo.
