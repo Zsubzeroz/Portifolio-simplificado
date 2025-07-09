@@ -163,14 +163,13 @@
         @media print {
             /* Hide buttons when printing */
             .footer {
-                display: none !important;
+                display: none !important; /* Added !important to ensure it overrides anything */
             }
 
-            /* --- Default Print Styles (Preto e Branco) --- */
-            /* Estas regras se aplicam a menos que a classe 'print-color' esteja no body */
+            /* Remove margins and background for printing */
             body {
-                background-color: #ffffff !important; /* Fundo branco forçado para P&B */
-                color: #000000 !important; /* Texto preto forçado para P&B */
+                background-color: #ffffff; /* White background for print */
+                color: #000000; /* Black text for print */
                 margin: 0;
                 padding: 0;
             }
@@ -179,86 +178,35 @@
                  margin: 0;
                  padding: 0;
                  box-shadow: none;
-                 background-color: #ffffff !important; /* Fundo branco forçado para P&B */
+                 background-color: #ffffff;
                  flex-direction: row; /* Prefer side-by-side columns for print */
                  max-width: none; /* Use full page width */
                  min-height: auto; /* Don't need min-height for print */
-                 break-inside: avoid; /* Ajuda a não quebrar dentro do container */
+                 /* Setting page-break-after: avoid on sections might help keep things together,
+                    but can also cause large white spaces if a section doesn't fit */
+                 /* page-break-after: avoid; */
             }
 
             .left-column, .right-column {
                  padding: 15px; /* Reduced padding for print */
-                 background-color: #ffffff !important; /* Fundo branco forçado para P&B */
-                 color: #000000 !important; /* Texto preto forçado para P&B */
+                 background-color: #ffffff; /* White background for print */
+                 color: #000000; /* Black text for print */
                  gap: 15px; /* Reduce gap between sections for print */
                  flex: 1; /* Give equal flex basis, let content size dictate final width */
-                 break-inside: avoid; /* Tenta evitar quebrar dentro das colunas */
+                 /* Setting break-inside: avoid is a newer property that might help prevent breaks within columns/sections */
+                 break-inside: avoid;
             }
 
-             /* Força texto e links para preto no modo P&B */
-             h1, h2, h3, strong, a {
-                color: #000000 !important;
+            /* Ensure text and link colors are black for print */
+            h1, h2, h3, strong, a {
+                color: #000000 !important; /* Use !important to ensure override */
              }
              a {
-                text-decoration: underline; /* Mantém underline para links em print P&B */
+                text-decoration: underline; /* Add underline for links in print */
              }
-
-             /* Borda preta para títulos no modo P&B */
              .left-column section h2, .right-column section h2 {
-                border-bottom-color: #000000 !important;
+                border-bottom-color: #000000 !important; /* Black underline for print */
              }
-
-             /* Borda preta para a imagem no modo P&B */
-             .profile-image {
-                border-color: #000000 !important;
-                /* filter: grayscale(100%); */ /* <-- Removi ou comentei este em versões anteriores, certifique-se que NÃO está aqui */
-                box-shadow: none; /* Remove shadow for print */
-                margin: 0 auto 15px auto; /* Adjust margin for print */
-                width: 120px; /* Slightly smaller image for print */
-                height: 120px;
-             }
-
-             /* --- Conditional Print Styles (Com Cores/Design) --- */
-             /* Estas regras se aplicam APENAS se a classe 'print-color' estiver no body E o usuário ativar "Imprimir planos de fundo" */
-            body.print-color {
-                background-color: #1a202c !important; /* Restaura fundo escuro */
-                color: #e2e8f0 !important; /* Restaura texto claro */
-            }
-            body.print-color .resume-container {
-                background-color: #2d3748 !important; /* Restaura fundo da área de conteúdo */
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Opcional: Restaura sombra */
-            }
-            body.print-color .left-column {
-                background-color: #1a202c !important; /* Restaura fundo da coluna esquerda */
-            }
-            body.print-color h1 {
-                 color: #ffffff !important; /* Restaura cor do nome principal */
-            }
-            /* Restaura cores e bordas dos títulos H2 */
-            body.print-color .left-column section h2,
-            body.print-color .right-column section h2 {
-                color: #48bb78 !important; /* Restaura cor verde padrão dos H2 */
-                border-bottom-color: #48bb78 !important;
-            }
-             body.print-color .left-column section#objetivo h2,
-             body.print-color .left-column section#habilidades h2 {
-                 color: #ffffff !important; /* Restaura cor branca dos H2 específicos */
-                 border-bottom-color: #ffffff !important;
-             }
-             body.print-color h3, body.print-color strong {
-                  color: #e2e8f0 !important; /* Restaura cor de H3 e strong */
-             }
-             body.print-color a {
-                  color: #63b3ed !important; /* Restaura cor azul dos links */
-                  text-decoration: underline; /* Mantém underline para links */
-             }
-             body.print-color .profile-image {
-                 border-color: #48bb78 !important; /* Restaura borda verde da imagem */
-                 /* filter: none !important; */ /* <-- Opcional: garante que filtros (como grayscale) sejam removidos */
-             }
-
-
-             /* --- Ajustes de layout para impressão (aplicam-se a ambos os modos) --- */
              ul {
                  padding-left: 15px; /* Adjust padding for print */
              }
@@ -273,24 +221,21 @@
                   margin-bottom: 5px;
              }
 
+             .profile-image {
+                border-color: #000000 !important; /* Black border for print */
+                box-shadow: none; /* Remove shadow for print */
+                margin: 0 auto 15px auto; /* Adjust margin for print */
+                width: 120px; /* Slightly smaller image for print */
+                height: 120px;
+             }
+
              /* Optional: Use @page to set margins for the printed page itself */
              @page {
                  margin: 1cm; /* Set page margins */
              }
 
-             /* Tentativas adicionais para controle de quebra de página */
-             section {
-                 break-inside: avoid; /* Tenta evitar quebrar dentro de seções */
-                 page-break-inside: avoid; /* Propriedade mais antiga, boa para compatibilidade */
-             }
-             ul, ol {
-                 break-inside: avoid;
-                 page-break-inside: avoid;
-             }
-             li {
-                 break-inside: avoid;
-                 page-break-inside: avoid;
-             }
+             /* Trying to force content scaling is complex and not always reliable via CSS */
+             /* If content still overflows, the browser's print dialog "Fit to page" option is key */
         }
 
 
@@ -465,35 +410,18 @@
 
     <footer class="footer">
         <button class="btn" onclick="goBack()">Voltar</button>
-        <!-- Botão para imprimir em Preto e Branco (usa o estilo print padrão) -->
-        <button class="btn" onclick="window.print()">Imprimir/PDF (P&B)</button>
-        <!-- Botão para imprimir com Cores (adiciona a classe e usa o estilo condicional) -->
-        <button class="btn" onclick="printWithColor()">Imprimir/PDF (Cores)</button>
+        <!-- window.print() is the standard browser way to open the print dialog -->
+        <!-- The user will choose "Save as PDF" or select a printer from there -->
+        <button class="btn" onclick="window.print()">Baixar Currículo em PDF</button>
+        <button class="btn" onclick="window.print()">Imprimir</button>
     </footer>
 
     <script>
         function goBack() {
             window.history.back();
         }
-
-        function printWithColor() {
-            // Adiciona a classe ao body antes de imprimir
-            document.body.classList.add('print-color');
-
-            // Chama a função de impressão do navegador
-            window.print();
-
-            // Remove a classe depois que a janela de impressão é fechada (suporta a maioria dos navegadores modernos)
-            // window.onafterprint é disparado quando o diálogo de impressão é fechado
-            window.onafterprint = function() {
-                document.body.classList.remove('print-color');
-                 // Reset the event handler to avoid potential issues with other prints
-                window.onafterprint = null;
-            };
-        }
-
-        // O botão "Imprimir/PDF (P&B)" já chama window.print() diretamente no onclick
-        // Isso usa os estilos @media print padrão, que agora são definidos para P&B por default
+        // window.print() is directly called in the onclick attributes of the buttons
+        // The CSS @media print block handles hiding the footer and optimizing for the page
     </script>
 
 </body>
