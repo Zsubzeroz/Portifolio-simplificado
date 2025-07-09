@@ -159,33 +159,47 @@
         }
 
 
+        /* Styles for printing */
         @media print {
             /* Hide buttons when printing */
             .footer {
                 display: none;
             }
+
+            /* Remove margins and background for printing */
             body {
                 background-color: #ffffff; /* White background for print */
                 color: #000000; /* Black text for print */
                 margin: 0;
                 padding: 0;
             }
+
             .resume-container {
                  margin: 0;
                  padding: 0;
                  box-shadow: none;
                  background-color: #ffffff;
-                 flex-direction: row !important; /* Force columns side-by-side for print if space allows */
+                 flex-direction: row; /* Prefer side-by-side columns for print */
                  max-width: none; /* Use full page width */
+                 min-height: auto; /* Don't need min-height for print */
+                 /* Setting page-break-after: avoid on sections might help keep things together,
+                    but can also cause large white spaces if a section doesn't fit */
+                 /* page-break-after: avoid; */
             }
-             .left-column, .right-column {
-                 padding: 10px; /* Less padding for print */
+
+            .left-column, .right-column {
+                 padding: 15px; /* Reduced padding for print */
                  background-color: #ffffff; /* White background for print */
                  color: #000000; /* Black text for print */
-                 gap: 15px; /* Reduce gap for print */
-             }
-             h1, h2, h3, strong, a {
-                color: #000000 !important; /* Ensure black text in print */
+                 gap: 15px; /* Reduce gap between sections for print */
+                 flex: 1; /* Give equal flex basis, let content size dictate final width */
+                 /* Setting break-inside: avoid is a newer property that might help prevent breaks within columns/sections */
+                 break-inside: avoid;
+            }
+
+            /* Ensure text and link colors are black for print */
+            h1, h2, h3, strong, a {
+                color: #000000 !important; /* Use !important to ensure override */
              }
              a {
                 text-decoration: underline; /* Add underline for links in print */
@@ -196,23 +210,45 @@
              ul {
                  padding-left: 15px; /* Adjust padding for print */
              }
+             li {
+                 margin-bottom: 3px; /* Reduce space between list items */
+             }
+             p {
+                 margin-top: 3px; /* Reduce space above paragraphs */
+             }
+             h3 {
+                  margin-top: 10px; /* Adjust h3 margin */
+                  margin-bottom: 5px;
+             }
+
              .profile-image {
                 border-color: #000000 !important; /* Black border for print */
                 box-shadow: none; /* Remove shadow for print */
-                margin-bottom: 15px; /* Adjust margin for print */
+                margin: 0 auto 15px auto; /* Adjust margin for print */
+                width: 120px; /* Slightly smaller image for print */
+                height: 120px;
              }
+
+             /* Optional: Use @page to set margins for the printed page itself */
+             @page {
+                 margin: 1cm; /* Set page margins */
+             }
+
+             /* Trying to force content scaling is complex and not always reliable via CSS */
+             /* If content still overflows, the browser's print dialog "Fit to page" option is key */
         }
 
 
+        /* Responsive styles for smaller screens (mobile) */
         @media (max-width: 768px) {
             .resume-container {
-                flex-direction: column;
+                flex-direction: column; /* Stack columns vertically */
                 margin: 10px;
             }
 
             .left-column, .right-column {
                 padding: 20px;
-                min-width: auto;
+                min-width: auto; /* Allow columns to shrink */
                 gap: 20px; /* Adjust gap for smaller screens */
             }
 
@@ -374,7 +410,8 @@
 
     <footer class="footer">
         <button class="btn" onclick="goBack()">Voltar</button>
-        <!-- Using window.print() allows saving as PDF from the print dialog -->
+        <!-- window.print() is the standard browser way to open the print dialog -->
+        <!-- The user will choose "Save as PDF" or select a printer from there -->
         <button class="btn" onclick="window.print()">Baixar Currículo em PDF</button>
         <button class="btn" onclick="window.print()">Imprimir</button>
     </footer>
@@ -384,6 +421,7 @@
             window.history.back();
         }
         // window.print() is directly called in the onclick attributes of the buttons
+        // The CSS @media print block handles hiding the footer and optimizing for the page
     </script>
 
 </body>
