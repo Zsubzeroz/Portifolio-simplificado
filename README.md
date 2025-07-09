@@ -1,9 +1,4 @@
 Projeto: Portfólio Pessoal
-  <link rel="stylesheet" href="./assets/css/style.css">
-   <div class="profile-container">
-                <img src="./assets/images/perfil.jpg" alt="" class="profile-img">
-            </div>
-
 
 Um portfólio pessoal desenvolvido para apresentar meus projetos, habilidades e informações de contato de forma profissional e organizada.
 
