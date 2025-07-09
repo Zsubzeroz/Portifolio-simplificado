@@ -1,4 +1,3 @@
-Generated html
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -22,7 +21,7 @@ Generated html
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             background-color: #2d3748; /* Slightly lighter dark for content area */
             flex-wrap: wrap; /* Allow wrapping on smaller screens */
-            min-height: 95vh; /* Ensure some height even with less content */
+            min-height: 85vh; /* Ensure some height even with less content, leaving space for footer */
         }
 
         .left-column {
@@ -122,9 +121,88 @@ Generated html
             color: #cbd5e0; /* Slightly lighter than main text for emphasis */
         }
 
+        /* Styling for the profile image */
         .profile-image {
-            display: none; /* No image provided for Luan, hide the placeholder */
+            display: block; /* Make it a block element to apply margins easily */
+            width: 150px; /* Size based on the example */
+            height: 150px; /* Size based on the example */
+            border-radius: 50%; /* Make it circular */
+            object-fit: cover; /* Crop image to fit the circle without distortion */
+            margin: 0 auto 25px auto; /* Center horizontally and add space below */
+            border: 3px solid #48bb78; /* Green border */
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.3); /* Optional: Add a subtle shadow */
         }
+
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            /* Optional: Match the dark background or make it slightly different */
+            background-color: #1a202c;
+        }
+
+        .btn {
+            background-color: #48bb78; /* Green background */
+            color: #1a202c; /* Dark text */
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px; /* Space between buttons */
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #38a169; /* Darker green on hover */
+        }
+
+
+        @media print {
+            /* Hide buttons when printing */
+            .footer {
+                display: none;
+            }
+            body {
+                background-color: #ffffff; /* White background for print */
+                color: #000000; /* Black text for print */
+                margin: 0;
+                padding: 0;
+            }
+            .resume-container {
+                 margin: 0;
+                 padding: 0;
+                 box-shadow: none;
+                 background-color: #ffffff;
+                 flex-direction: row !important; /* Force columns side-by-side for print if space allows */
+                 max-width: none; /* Use full page width */
+            }
+             .left-column, .right-column {
+                 padding: 10px; /* Less padding for print */
+                 background-color: #ffffff; /* White background for print */
+                 color: #000000; /* Black text for print */
+                 gap: 15px; /* Reduce gap for print */
+             }
+             h1, h2, h3, strong, a {
+                color: #000000 !important; /* Ensure black text in print */
+             }
+             a {
+                text-decoration: underline; /* Add underline for links in print */
+             }
+             .left-column section h2, .right-column section h2 {
+                border-bottom-color: #000000 !important; /* Black underline for print */
+             }
+             ul {
+                 padding-left: 15px; /* Adjust padding for print */
+             }
+             .profile-image {
+                border-color: #000000 !important; /* Black border for print */
+                box-shadow: none; /* Remove shadow for print */
+                margin-bottom: 15px; /* Adjust margin for print */
+             }
+        }
+
 
         @media (max-width: 768px) {
             .resume-container {
@@ -137,6 +215,12 @@ Generated html
                 min-width: auto;
                 gap: 20px; /* Adjust gap for smaller screens */
             }
+
+             .profile-image {
+                 width: 100px; /* Smaller image on mobile */
+                 height: 100px;
+                 margin-bottom: 20px;
+             }
 
             h1 {
                 text-align: left; /* Keep name left aligned like the original */
@@ -151,6 +235,15 @@ Generated html
             h3 {
                  font-size: 1.2em; /* Adjust H3 size */
             }
+
+             .footer {
+                display: flex; /* Use flexbox for footer buttons */
+                flex-direction: column; /* Stack buttons vertically */
+                gap: 10px; /* Space between stacked buttons */
+             }
+             .btn {
+                margin: 5px 0; /* Adjust button margin for stacking */
+             }
         }
     </style>
 </head>
@@ -158,7 +251,8 @@ Generated html
 
     <div class="resume-container">
         <div class="left-column">
-            <!-- Removed profile image as per the original style -->
+            <!-- Profile Image added here -->
+            <img src="./assets/images/perfil.jpg" alt="Foto de Perfil de Luan Estifer" class="profile-image">
 
             <section id="objetivo">
                 <h2>Objetivo</h2>
@@ -278,7 +372,19 @@ Generated html
         </div>
     </div>
 
-    <!-- Removed JavaScript and footer buttons as requested -->
+    <footer class="footer">
+        <button class="btn" onclick="goBack()">Voltar</button>
+        <!-- Using window.print() allows saving as PDF from the print dialog -->
+        <button class="btn" onclick="window.print()">Baixar Currículo em PDF</button>
+        <button class="btn" onclick="window.print()">Imprimir</button>
+    </footer>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+        // window.print() is directly called in the onclick attributes of the buttons
+    </script>
 
 </body>
 </html>
