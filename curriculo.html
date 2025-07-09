@@ -163,13 +163,14 @@
         @media print {
             /* Hide buttons when printing */
             .footer {
-                display: none !important; /* Added !important to ensure it overrides anything */
+                display: none !important;
             }
 
-            /* Remove margins and background for printing */
+            /* --- Removendo regras que forçam fundo branco/texto preto para tentar manter o design --- */
+            /* Isso só funcionará se o usuário ativar a opção "Imprimir planos de fundo" no navegador */
             body {
-                background-color: #ffffff; /* White background for print */
-                color: #000000; /* Black text for print */
+                /* background-color: #ffffff; */ /* Remove */
+                /* color: #000000; */ /* Remove - Cor padrão virá da tela */
                 margin: 0;
                 padding: 0;
             }
@@ -178,35 +179,37 @@
                  margin: 0;
                  padding: 0;
                  box-shadow: none;
-                 background-color: #ffffff;
+                 /* background-color: #ffffff; */ /* Remove - Cor padrão virá da tela */
                  flex-direction: row; /* Prefer side-by-side columns for print */
                  max-width: none; /* Use full page width */
                  min-height: auto; /* Don't need min-height for print */
-                 /* Setting page-break-after: avoid on sections might help keep things together,
-                    but can also cause large white spaces if a section doesn't fit */
-                 /* page-break-after: avoid; */
+                 break-inside: avoid; /* Ajuda a não quebrar dentro do container */
             }
 
             .left-column, .right-column {
                  padding: 15px; /* Reduced padding for print */
-                 background-color: #ffffff; /* White background for print */
-                 color: #000000; /* Black text for print */
+                 /* background-color: #ffffff; */ /* Remove - Cor padrão virá da tela */
+                 /* color: #000000; */ /* Remove - Cor padrão virá da tela */
                  gap: 15px; /* Reduce gap between sections for print */
                  flex: 1; /* Give equal flex basis, let content size dictate final width */
-                 /* Setting break-inside: avoid is a newer property that might help prevent breaks within columns/sections */
-                 break-inside: avoid;
+                 break-inside: avoid; /* Tenta evitar quebrar dentro das colunas */
             }
 
-            /* Ensure text and link colors are black for print */
-            h1, h2, h3, strong, a {
-                color: #000000 !important; /* Use !important to ensure override */
-             }
+            /* --- Ajustes para garantir a legibilidade com cores originais --- */
+            /* Mantenha cores de títulos e links se possível, mas se o fundo for escuro, o texto branco original já funciona */
+             h1 { color: #ffffff !important; } /* Garante que o nome principal fique branco */
+             /* As outras cores (h2 verde, h2 branco, h3 claro) virão do estilo normal se o fundo for impresso */
+             h2, h3, strong { color: inherit !important; } /* Herda a cor original */
              a {
-                text-decoration: underline; /* Add underline for links in print */
+                 color: #63b3ed !important; /* Mantém a cor do link */
+                 text-decoration: underline; /* Adiciona underline para links em print */
              }
+
+             /* Ajusta bordas para manter as cores originais ou garantir visibilidade */
              .left-column section h2, .right-column section h2 {
-                border-bottom-color: #000000 !important; /* Black underline for print */
+                border-bottom-color: inherit !important; /* Herda a cor da borda (branco ou verde) */
              }
+
              ul {
                  padding-left: 15px; /* Adjust padding for print */
              }
@@ -222,7 +225,7 @@
              }
 
              .profile-image {
-                border-color: #000000 !important; /* Black border for print */
+                border-color: #48bb78 !important; /* Mantém a borda verde */
                 box-shadow: none; /* Remove shadow for print */
                 margin: 0 auto 15px auto; /* Adjust margin for print */
                 width: 120px; /* Slightly smaller image for print */
@@ -234,8 +237,19 @@
                  margin: 1cm; /* Set page margins */
              }
 
-             /* Trying to force content scaling is complex and not always reliable via CSS */
-             /* If content still overflows, the browser's print dialog "Fit to page" option is key */
+             /* Tentativas adicionais para controle de quebra de página */
+             section {
+                 break-inside: avoid; /* Tenta evitar quebrar dentro de seções */
+                 page-break-inside: avoid; /* Propriedade mais antiga, boa para compatibilidade */
+             }
+             ul, ol {
+                 break-inside: avoid;
+                 page-break-inside: avoid;
+             }
+             li {
+                 break-inside: avoid;
+                 page-break-inside: avoid;
+             }
         }
 
 
