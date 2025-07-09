@@ -1,6 +1,6 @@
 Projeto: Portfólio Pessoal
 
-![alt text](./assets/images/portfolio-screenshot.png)
+![alt text](./assets/images/perfil.jpg)
 
 
 Um portfólio pessoal desenvolvido para apresentar meus projetos, habilidades e informações de contato de forma profissional e organizada.
