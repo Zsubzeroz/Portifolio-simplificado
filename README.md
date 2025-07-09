@@ -1,5 +1,5 @@
 Projeto: Portfólio Pessoal
-
+  <link rel="stylesheet" href="./assets/css/style.css">
    <div class="profile-container">
                 <img src="./assets/images/perfil.jpg" alt="" class="profile-img">
             </div>
