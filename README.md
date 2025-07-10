@@ -3,7 +3,7 @@ Projeto: Portfólio Pessoal
 <!doctype html>
 <html>
     <head>
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="./assets/css/style.css">
     </head>
     <body></body>
 </html>
