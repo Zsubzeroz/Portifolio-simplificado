@@ -1,5 +1,5 @@
 Projeto: Portfólio Pessoal
-<img src="./assets/images/perfillogo.jxl" alt="LOGO" class="profile-img">
+<img src="./assets/images/perfillogo.png" alt="LOGO" class="profile-img">
     
 Um portfólio pessoal desenvolvido para apresentar meus projetos, habilidades e informações de contato de forma profissional e organizada.
 
