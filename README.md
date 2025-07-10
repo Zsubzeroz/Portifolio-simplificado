@@ -1,24 +1,5 @@
 Projeto: Portfólio Pessoal
-
-<!doctype html>
-<html>
-    <head>
-        <link rel="stylesheet" href="./assets/css/style.css">
-    </head>
-    <body></body>
-</html>
-
-  <header>
-       <div class="profile-container">
-                <img src="./assets/images/perfil.jpg" alt="" class="profile-img">
-            </div>
-      <div class="cabecalho-link">
-          <li><a href="#text">Home</a></li>
-          <li><a href="sobre.html">Sobre</a></li>
-          <li><a href="curriculo.html">Currículo</a></li>
-          <li><button class="btn" onclick="window.location.href='contact.html'" >Meu contato</button></li>
-      </div>
-    </header>
+<img src="./assets/images/perfillogo.jpg" alt="LOGO" class="profile-img">
     
 Um portfólio pessoal desenvolvido para apresentar meus projetos, habilidades e informações de contato de forma profissional e organizada.
 
